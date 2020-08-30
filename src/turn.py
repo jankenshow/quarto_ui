@@ -8,12 +8,12 @@ class Turn:
     # def update_selected_piece(self, id):
     #     self.selected_piece_id = id
 
-    def change_turn(self):
-        self.first_player_active = False
+    def toggle_turn(self):
+        self.first_player_active = not self.first_player_active
         self.turn_id += 1
 
     def get_info(self):
-        return self.turn_id, self.first_player_active
+        return (self.turn_id, self.first_player_active)
 
     def reset(self):
         self.first_player_active = True
